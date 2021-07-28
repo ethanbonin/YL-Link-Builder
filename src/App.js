@@ -14,7 +14,9 @@ function YoungLivingFinalUrlComponent(props) {
 
   const handleButtonClick = () => {
     const el = document.createElement('textarea');
-    el.value = `${url}?sponsorid=${memberId}&enrollerid=${memberId}`;
+    let valueToCopy = `${url}?sponsorid=${memberId}&enrollerid=${memberId}`
+    valueToCopy = valueToCopy.replace(/\s/g, '');
+    el.value = valueToCopy;
     document.body.appendChild(el);
     el.select();
     document.execCommand('copy');
